@@ -254,7 +254,7 @@ CAUw7C29C79Fv1C5qfPrmAESrciIxpg0X40KPMbp1ZWVbd4=
       sprintf(currentTimeStr, "%02d:%02d", now.hour(), now.minute());
 
       bool isCurrentDayIncluded = repetitionDays & (1 << currentDay);
-      if (isCurrentDayIncluded) {
+      if (!isCurrentDayIncluded) {
         Serial.println("Current Included");
         if (startTime == String(currentTimeStr) && !isWaterValveScheduled) {
           // Perform actions for this slot
